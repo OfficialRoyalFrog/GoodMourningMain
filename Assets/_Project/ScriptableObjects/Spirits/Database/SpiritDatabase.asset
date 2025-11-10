@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c06243e505440deaaa820ff7eda58b, type: 3}
+  m_Name: SpiritDatabase
+  m_EditorClassIdentifier: 
+  spirits:
+  - {fileID: 11400000, guid: bdec3cb3aa8ac47d68519f44fec42286, type: 2}
+  - {fileID: 11400000, guid: 39b75e1af6c61438384b8a3276d84919, type: 2}
+  - {fileID: 11400000, guid: d8c4e777056de49c7bfb7c8ff4be9c58, type: 2}

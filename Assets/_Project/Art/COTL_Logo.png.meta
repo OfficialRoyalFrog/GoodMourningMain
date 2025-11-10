@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: 6a9654c86daf14d3ca16d41719f819fa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4324630501184353702
+    second: COTL_Logo_0
+  - first:
+      213: 2409859487061402895
+    second: COTL_Logo_1
+  - first:
+      213: 2996345019668323169
+    second: COTL_Logo_2
+  - first:
+      213: -55302960406622321
+    second: COTL_Logo_3
+  - first:
+      213: 1739444519768037648
+    second: COTL_Logo_4
+  - first:
+      213: -7785675341855746479
+    second: COTL_Logo_5
+  - first:
+      213: 547473736132911536
+    second: COTL_Logo_6
+  - first:
+      213: 753965922485967948
+    second: COTL_Logo_7
+  - first:
+      213: 8579637177389690655
+    second: COTL_Logo_8
+  - first:
+      213: -2527721160343121893
+    second: COTL_Logo_9
+  - first:
+      213: -4618098613068136562
+    second: COTL_Logo_10
+  - first:
+      213: 7285975138218475137
+    second: COTL_Logo_11
+  - first:
+      213: -8658465102540131148
+    second: COTL_Logo_12
+  - first:
+      213: -3559983957350790216
+    second: COTL_Logo_13
+  - first:
+      213: -1858291040072124750
+    second: COTL_Logo_14
+  - first:
+      213: 7983538139947282680
+    second: COTL_Logo_15
+  - first:
+      213: 1975288100680900901
+    second: COTL_Logo_16
+  - first:
+      213: 8736404271375796677
+    second: COTL_Logo_17
+  - first:
+      213: -4034056909723248785
+    second: COTL_Logo_18
+  - first:
+      213: 3146309066435000947
+    second: COTL_Logo_19
+  - first:
+      213: -8481920807488790537
+    second: COTL_Logo_20
+  - first:
+      213: -2009123510533249887
+    second: COTL_Logo_21
+  - first:
+      213: 1371351309351946143
+    second: COTL_Logo_22
+  - first:
+      213: 1555144926668459182
+    second: COTL_Logo_23
+  - first:
+      213: 8107578182584842980
+    second: COTL_Logo_24
+  - first:
+      213: -8249365503765266124
+    second: COTL_Logo_25
+  - first:
+      213: -1376971179441647756
+    second: COTL_Logo_26
+  - first:
+      213: 1604090545010897892
+    second: COTL_Logo_27
+  - first:
+      213: 21438658146298789
+    second: COTL_Logo_28
+  - first:
+      213: 2091648110649345897
+    second: COTL_Logo_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: COTL_Logo_0
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 256
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a4618d873dbf3c0800000000000000
+      internalID: -4324630501184353702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_1
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 281
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0566ec7f6a817120800000000000000
+      internalID: 2409859487061402895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_2
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 256
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b57d98be7259920800000000000000
+      internalID: 2996345019668323169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_3
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 223
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8f8fe120468b3ff0800000000000000
+      internalID: -55302960406622321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_4
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 231
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0191643239fb32810800000000000000
+      internalID: 1739444519768037648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_5
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 129
+        width: 83
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1569b20e689b3f390800000000000000
+      internalID: -7785675341855746479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_6
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 220
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b1ee0e5674099700800000000000000
+      internalID: 547473736132911536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_7
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 231
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c96860300a67a00800000000000000
+      internalID: 753965922485967948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_8
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 223
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f2c045e8ef01770800000000000000
+      internalID: 8579637177389690655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_9
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 68
+        width: 43
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1092824ffabbecd0800000000000000
+      internalID: -2527721160343121893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_10
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 198
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8f795677c739efb0800000000000000
+      internalID: -4618098613068136562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_11
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 198
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ef6d319cbfc1560800000000000000
+      internalID: 7285975138218475137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 121
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b4bafe1dd3f6d780800000000000000
+      internalID: -8658465102540131148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_13
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 68
+        width: 43
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb4400d375689ec0800000000000000
+      internalID: -3559983957350790216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_14
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 68
+        width: 42
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b6b53b05260636e0800000000000000
+      internalID: -1858291040072124750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_15
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 67
+        width: 156
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f03752c3a93bce60800000000000000
+      internalID: 7983538139947282680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_16
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 115
+        width: 114
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5212422ef02a96b10800000000000000
+      internalID: 1975288100680900901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_17
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 69
+        width: 41
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c94f89b561fd3970800000000000000
+      internalID: 8736404271375796677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_18
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 68
+        width: 40
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f675c3c2d962408c0800000000000000
+      internalID: -4034056909723248785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_19
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 68
+        width: 127
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37af2721d6fe9ab20800000000000000
+      internalID: 3146309066435000947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_20
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 78
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ffd2a8f6f92a4a80800000000000000
+      internalID: -8481920807488790537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_21
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 67
+        width: 114
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4a7ccdfc82e14e0800000000000000
+      internalID: -2009123510533249887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_22
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 78
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97803800c4080310800000000000000
+      internalID: 1371351309351946143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_23
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 78
+        width: 48
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eac0350421cf49510800000000000000
+      internalID: 1555144926668459182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_24
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 79
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea3da9b667e38070800000000000000
+      internalID: 8107578182584842980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_25
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 43
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431c5b508cd548d80800000000000000
+      internalID: -8249365503765266124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_26
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 24
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f0e6ff10404ece0800000000000000
+      internalID: -1376971179441647756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_27
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 17
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e3ffe21adfd24610800000000000000
+      internalID: 1604090545010897892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_28
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 17
+        width: 16
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ab6543985a2c4000800000000000000
+      internalID: 21438658146298789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COTL_Logo_29
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 43
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9670f56efd6070d10800000000000000
+      internalID: 2091648110649345897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      COTL_Logo_0: -4324630501184353702
+      COTL_Logo_1: 2409859487061402895
+      COTL_Logo_10: -4618098613068136562
+      COTL_Logo_11: 7285975138218475137
+      COTL_Logo_12: -8658465102540131148
+      COTL_Logo_13: -3559983957350790216
+      COTL_Logo_14: -1858291040072124750
+      COTL_Logo_15: 7983538139947282680
+      COTL_Logo_16: 1975288100680900901
+      COTL_Logo_17: 8736404271375796677
+      COTL_Logo_18: -4034056909723248785
+      COTL_Logo_19: 3146309066435000947
+      COTL_Logo_2: 2996345019668323169
+      COTL_Logo_20: -8481920807488790537
+      COTL_Logo_21: -2009123510533249887
+      COTL_Logo_22: 1371351309351946143
+      COTL_Logo_23: 1555144926668459182
+      COTL_Logo_24: 8107578182584842980
+      COTL_Logo_25: -8249365503765266124
+      COTL_Logo_26: -1376971179441647756
+      COTL_Logo_27: 1604090545010897892
+      COTL_Logo_28: 21438658146298789
+      COTL_Logo_29: 2091648110649345897
+      COTL_Logo_3: -55302960406622321
+      COTL_Logo_4: 1739444519768037648
+      COTL_Logo_5: -7785675341855746479
+      COTL_Logo_6: 547473736132911536
+      COTL_Logo_7: 753965922485967948
+      COTL_Logo_8: 8579637177389690655
+      COTL_Logo_9: -2527721160343121893
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
