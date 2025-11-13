@@ -45,27 +45,41 @@ public class PromptSizer : MonoBehaviour
     {
         if (!self || !text) return;
 
-        // --- 1) widths ---
-        float textW = Mathf.Max(0f, text.preferredWidth);
-
-        float badgeW = 0f;
-        if (badge && badge.gameObject.activeInHierarchy)
+        // --- 1) ask the layout how wide the entire row wants to be ---
+        float rowWidth = 0f;
+        if (promptRow)
         {
-            badgeW = badge.rect.width;
-            if (badgeW <= 0f) // if not laid out yet, fall back to preferred
-                badgeW = LayoutUtility.GetPreferredWidth(badge);
+            // ensure LayoutGroup measurements include the most recent text/badge changes
+            LayoutRebuilder.ForceRebuildLayoutImmediate(promptRow);
+            rowWidth = LayoutUtility.GetPreferredWidth(promptRow);
+
+            if (rowWidth <= 0f)
+                rowWidth = promptRow.rect.width;
         }
 
-        // --- 2) spacing + row padding ---
-        float spacing = rowLayout ? rowLayout.spacing : 0f;
-        int padL = rowLayout ? rowLayout.padding.left : 0;
-        int padR = rowLayout ? rowLayout.padding.right : 0;
+        // --- 2) fallback: legacy single-label calculation (kept for safety) ---
+        if (rowWidth <= 0f)
+        {
+            float textW = Mathf.Max(0f, text.preferredWidth);
 
-        // only add spacing when the badge is visible
-        float pairSpacing = (badgeW > 0f) ? spacing : 0f;
+            float badgeW = 0f;
+            if (badge && badge.gameObject.activeInHierarchy)
+            {
+                badgeW = badge.rect.width;
+                if (badgeW <= 0f) // if not laid out yet, fall back to preferred
+                    badgeW = LayoutUtility.GetPreferredWidth(badge);
+            }
+
+            float spacing = rowLayout ? rowLayout.spacing : 0f;
+            int padL = rowLayout ? rowLayout.padding.left : 0;
+            int padR = rowLayout ? rowLayout.padding.right : 0;
+            float pairSpacing = (badgeW > 0f) ? spacing : 0f;
+
+            rowWidth = badgeW + pairSpacing + textW + padL + padR;
+        }
 
         // --- 3) total width inside stroke ---
-        float total = badgeW + pairSpacing + textW + padL + padR + horizontalPadding;
+        float total = rowWidth + horizontalPadding;
         total = Mathf.Clamp(total, minWidth, maxWidth);
 
         // apply to stroke
