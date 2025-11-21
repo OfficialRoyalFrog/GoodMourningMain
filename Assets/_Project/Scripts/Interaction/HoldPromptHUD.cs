@@ -23,11 +23,13 @@ namespace KD.UI
 
         [Header("Split Label Copy")]
         [SerializeField] private string holdPrefixText = "Hold";
+        [SerializeField] private string pressPrefixText = "Press";
         [SerializeField] private string promptFormat = "to {0}";
 
         [Header("Behavior")]
         [SerializeField, Min(0f)] private float fadeSeconds = 0.12f; // UI fade
         [SerializeField, Range(0f, 1f)] private float minAlphaToBlockRaycasts = 0.05f;
+        [SerializeField] private bool forceSplitLayout = false;
 
         // internal
         float targetAlpha;
@@ -94,8 +96,11 @@ namespace KD.UI
         /// Show the HUD and set the copy. Example: binding="E", prompt="Chop Tree" → "Hold (E) to Chop Tree".
         /// Ensures the relevant objects and parents up to this HUD are active.
         /// </summary>
-        public void Show(string bindingText, string prompt)
+        bool usingHoldPrefix = true;
+
+        public void Show(string bindingText, string prompt, bool holdPrefix = true)
         {
+            usingHoldPrefix = holdPrefix;
             if (!gameObject.activeSelf) gameObject.SetActive(true);
             EnsureActiveUpToSelf(label ? label.gameObject : null);
             EnsureActiveUpToSelf(prefixLabel ? prefixLabel.gameObject : null);
@@ -106,6 +111,9 @@ namespace KD.UI
             ApplyLabel(bindingText, prompt, force:true); // always rewrite label so revisits don't show an empty prompt
             SetProgress01(0f);
             FadeTo(1f);
+
+            if (radialImage)
+                radialImage.enabled = holdPrefix;
         }
 
         /// <summary>
@@ -202,18 +210,32 @@ namespace KD.UI
             cachedBindingText = bindingText;
             cachedPromptText  = prompt;
 
+            string prefix = usingHoldPrefix ? holdPrefixText : pressPrefixText;
+            prefix = string.IsNullOrWhiteSpace(prefix) ? (usingHoldPrefix ? "Hold" : "Press") : prefix.Trim();
+
+            bool usingSplitLayout = forceSplitLayout || prefixLabel || bindingLabel || suffixLabel;
+
             if (label)
             {
-                sb.Clear();
-                sb.Append("Hold (");
-                sb.Append(bindingText);
-                sb.Append(") to ");
-                sb.Append(prompt);
-                label.text = sb.ToString();
+                if (usingSplitLayout)
+                {
+                    // Only show the action text when separate prefix/binding UI exists.
+                    label.text = string.IsNullOrWhiteSpace(prompt) ? string.Empty : prompt;
+                }
+                else
+                {
+                    sb.Clear();
+                    sb.Append(prefix);
+                    sb.Append(" (");
+                    sb.Append(bindingText);
+                    sb.Append(") ");
+                    sb.Append(FormatSuffix(prompt));
+                    label.text = sb.ToString();
+                }
             }
 
             if (prefixLabel)
-                prefixLabel.text = string.IsNullOrWhiteSpace(holdPrefixText) ? "Hold" : holdPrefixText;
+                prefixLabel.text = prefix;
 
             if (suffixLabel)
             {

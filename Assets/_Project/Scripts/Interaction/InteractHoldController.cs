@@ -127,6 +127,7 @@ namespace KD.Core
             if (mover) mover.enabled = true;
             hud?.Hide();
             TrySendHoldFeedback(currentTarget, start: false);
+            currentTarget = null;
             OnHoldCanceled?.Invoke();
         }
 
@@ -138,7 +139,9 @@ namespace KD.Core
             if (mover) mover.enabled = true;
             hud?.Hide();
 
-            currentTarget?.Interact(interactor);
+            var target = currentTarget;
+            currentTarget = null;
+            target?.Interact(interactor);
             OnHoldCompleted?.Invoke();
         }
 
@@ -146,7 +149,7 @@ namespace KD.Core
         {
             var focus = interactor ? interactor.Current : null;
 
-            if (focus == null)
+            if (focus == null || (focus is Object unityObj && unityObj == null))
             {
                 if (!isHolding)
                     hud?.Hide();
@@ -161,22 +164,30 @@ namespace KD.Core
                 bool requiresHold = false;
                 if (focus is Component c)
                 {
+                    if (!c)
+                    {
+                        if (!isHolding)
+                            hud?.Hide();
+                        return;
+                    }
                     var baseComp = c.GetComponentInParent<InteractableBase>();
-                    requiresHold = baseComp && baseComp.requiresHold;
+                    requiresHold = baseComp && baseComp.RequiresHoldRuntime;
                 }
 
                 if (requiresHold)
                 {
                     if (debugLogs)
                         Debug.Log($"[HoldHUD] SHOW prompt=\"{prompt}\" focus={(focus as Component ? ((Component)focus).name : "?")}", this);
-                    hud?.Show(binding, prompt);
+                    hud?.Show(binding, prompt, true);
                     hud?.SetProgress01(0f);
                     if (snapVisibleOnFocus) hud?.SnapVisible(true);
                 }
                 else
                 {
-                    if (debugLogs) Debug.Log("[HoldHUD] HIDE (not a hold target)", this);
-                    hud?.Hide();
+                    if (debugLogs) Debug.Log("[HoldHUD] SHOW instant (not a hold target)", this);
+                    hud?.Show(binding, prompt, false);
+                    hud?.SetProgress01(0f);
+                    if (snapVisibleOnFocus) hud?.SnapVisible(true);
                 }
             }
         }
@@ -189,7 +200,7 @@ namespace KD.Core
 
         void TrySendHoldFeedback(IInteractable target, bool start)
         {
-            if (target is not Component c) return;
+            if (target is not Component c || !c) return;
             var feedback = c.GetComponent<IHoldFeedback>();
             if (feedback == null) return;
 
@@ -202,7 +213,7 @@ namespace KD.Core
         float ResolveHoldSeconds(IInteractable target)
         {
             float duration = Mathf.Max(0.05f, defaultHoldSeconds);
-            if (target is Component c)
+            if (target is Component c && c)
             {
                 var baseComp = c.GetComponentInParent<InteractableBase>();
                 if (baseComp && baseComp.holdSecondsOverride > 0f)
@@ -220,7 +231,7 @@ namespace KD.Core
             }
 
             float progress = 0f;
-            if (target is Component c)
+            if (target is Component c && c)
             {
                 var provider = c.GetComponent<IHoldProgressProvider>();
                 if (provider != null)

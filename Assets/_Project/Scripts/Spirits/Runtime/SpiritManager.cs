@@ -690,6 +690,10 @@ private void TryShowPending()
     _pendingInstance = Instantiate(so.HubPrefab, pos, Quaternion.identity);
     _pendingInstance.transform.rotation = Quaternion.identity;
 
+    // Apply spirit-specific visuals so pending copy shows correct sprite/colors
+    var appearance = _pendingInstance.GetComponent<SpiritAppearance>() ?? _pendingInstance.AddComponent<SpiritAppearance>();
+    appearance.Apply(so);
+
     // Ensure a SpiritAgent exists, but keep it stationary (hover only)
     var agent = _pendingInstance.GetComponent<SpiritAgent>() ?? _pendingInstance.AddComponent<SpiritAgent>();
         agent.moveSpeed = 0f; // no wandering here

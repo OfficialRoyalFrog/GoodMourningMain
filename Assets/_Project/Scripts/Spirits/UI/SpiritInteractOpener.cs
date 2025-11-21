@@ -6,7 +6,7 @@ using UnityEngine;
 /// for the spirit identified by SpiritIdHandle on the same object/children.
 /// </summary>
 [RequireComponent(typeof(InteractableBase))]
-public class SpiritInteractOpener : MonoBehaviour, IInteractAction
+public class SpiritInteractOpener : MonoBehaviour, IInteractAction, IInstantInteractAction
 {
     [Header("UI")]
     [Tooltip("Radial controller in the HUD. Drag the scene instance here.")]
@@ -24,6 +24,7 @@ public class SpiritInteractOpener : MonoBehaviour, IInteractAction
         {
             // Ensure this interaction is instant (no hold)
             interactable.requiresHold = false;
+            interactable.forceInstant = true;
         }
 
         // If not assigned in inspector, try to auto-find in the scene (works even if inactive)
@@ -59,7 +60,11 @@ public class SpiritInteractOpener : MonoBehaviour, IInteractAction
     {
         // Keep instant interact when editing
         var ib = GetComponent<InteractableBase>();
-        if (ib) ib.requiresHold = false;
+        if (ib)
+        {
+            ib.requiresHold = false;
+            ib.forceInstant = true;
+        }
         TryEnsureRegisteredOnInteractable();
     }
 #endif

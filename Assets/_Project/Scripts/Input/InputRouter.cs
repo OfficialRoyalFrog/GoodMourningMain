@@ -8,7 +8,9 @@ public class InputRouter : MonoBehaviour
     private GamePause _pause;
     private BuildModeController _build;
     private InventoryMenu _inventory;
+    private BuildMenu _buildMenu;
     private InteractHoldController _hold;
+    [SerializeField] private PlayerInteractor playerInteractor;
     private InputAction _interactAction;
 
     [Header("Input Debounce")]
@@ -22,11 +24,24 @@ public class InputRouter : MonoBehaviour
         _pause = GetComponent<GamePause>();
         _build = GetComponent<BuildModeController>();
         _inventory = GetComponent<InventoryMenu>();
+        _buildMenu = GetComponent<BuildMenu>();
         _hold = GetComponent<InteractHoldController>();
+#if UNITY_2023_1_OR_NEWER
+        if (playerInteractor == null) playerInteractor = GetComponent<PlayerInteractor>();
+        if (playerInteractor == null) playerInteractor = FindFirstObjectByType<PlayerInteractor>();
+#else
+        if (playerInteractor == null) playerInteractor = GetComponent<PlayerInteractor>();
+        if (playerInteractor == null) playerInteractor = FindObjectOfType<PlayerInteractor>();
+#endif
 #if UNITY_2023_1_OR_NEWER
         if (_hold == null) _hold = Object.FindFirstObjectByType<InteractHoldController>();
 #else
         if (_hold == null) _hold = Object.FindObjectOfType<InteractHoldController>();
+#endif
+#if UNITY_2023_1_OR_NEWER
+        if (_buildMenu == null) _buildMenu = Object.FindFirstObjectByType<BuildMenu>(FindObjectsInactive.Include);
+#else
+        if (_buildMenu == null) _buildMenu = Object.FindObjectOfType<BuildMenu>();
 #endif
     }
 
@@ -97,6 +112,11 @@ public class InputRouter : MonoBehaviour
                 _inventory.SetOpen(false);
             return;
         }
+        if (_buildMenu != null && _buildMenu.IsOpen)
+        {
+            _buildMenu.SetOpen(false);
+            return;
+        }
         _pause.SetPaused(!GamePause.IsPaused);
     }
 
@@ -107,6 +127,24 @@ public class InputRouter : MonoBehaviour
 
     private void OnInteractStarted(InputAction.CallbackContext ctx)
     {
+        var target = playerInteractor ? playerInteractor.Current : null;
+        if (target == null || !target.CanInteract(playerInteractor))
+            return;
+
+        bool requiresHold = true;
+        if (target is Component c)
+        {
+            var baseComp = c.GetComponentInParent<InteractableBase>();
+            if (baseComp != null)
+                requiresHold = baseComp.RequiresHoldRuntime;
+        }
+
+        if (!requiresHold)
+        {
+            target.Interact(playerInteractor);
+            return;
+        }
+
         if (_hold != null)
             _hold.BeginHold();
     }
@@ -125,12 +163,21 @@ public class InputRouter : MonoBehaviour
         _lastInventoryFrame = Time.frameCount;
         _nextInventoryTime = Time.unscaledTime + inventoryDebounceSeconds;
 
+        if (_buildMenu != null && _buildMenu.IsOpen)
+            _buildMenu.SetOpen(false);
+
         if (_inventory != null)
             _inventory.Toggle();
     }
 
     private void OnCancelPerformed(InputAction.CallbackContext ctx)
     {
+        if (_buildMenu != null && _buildMenu.IsOpen)
+        {
+            _buildMenu.SetOpen(false);
+            return;
+        }
+
         if (_inventory != null && InventoryMenu.IsOpen)
         {
             _inventory.SetOpen(false);
@@ -138,5 +185,19 @@ public class InputRouter : MonoBehaviour
         }
         // Optional: forward to Pause if desired
         // _pause.SetPaused(!GamePause.IsPaused);
+    }
+
+    public void OpenBuildMenu()
+    {
+        if (_buildMenu == null) return;
+        if (_inventory != null && InventoryMenu.IsOpen)
+            _inventory.SetOpen(false);
+        _buildMenu.SetOpen(true);
+    }
+
+    public void CloseBuildMenu()
+    {
+        if (_buildMenu == null || !_buildMenu.IsOpen) return;
+        _buildMenu.SetOpen(false);
     }
 }

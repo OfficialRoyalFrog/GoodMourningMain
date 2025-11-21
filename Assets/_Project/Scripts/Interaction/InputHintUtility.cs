@@ -23,8 +23,9 @@ public static class InputHintUtility
             string display;
 
 #if UNITY_INPUT_SYSTEM_1_6_OR_NEWER
-            // Prefer Input System's display string but exclude device names.
-            var opts = InputBinding.DisplayStringOptions.DontIncludeDevice;
+            // Prefer Input System's display string but exclude device and interaction names.
+            var opts = InputBinding.DisplayStringOptions.DontIncludeDevice |
+                       InputBinding.DisplayStringOptions.DontIncludeInteractions;
             display = action.GetBindingDisplayString(i, opts);
 #else
             // Older versions: derive from the effective control path.
@@ -49,14 +50,28 @@ public static class InputHintUtility
         if (string.IsNullOrEmpty(s)) return "?";
         s = s.Trim();
 
-        // strip common noise
-        s = s.Replace("Hold", "").Replace("Press", "");
+        // strip leading interaction words the Input System may include ("Press Space")
+        s = StripLeadingToken(s, "Press");
+        s = StripLeadingToken(s, "Hold");
+
+        // strip other noise the badge should never show
         s = s.Replace("Key", "").Replace("Button", "");
         s = s.Replace("Any", ""); // "Any Key" → ""
         s = s.Replace("  ", " ").Trim();
 
-        // e.g. "E " → "E"
         return s.Trim();
+    }
+
+    static string StripLeadingToken(string value, string token)
+    {
+        if (string.IsNullOrEmpty(value) || string.IsNullOrEmpty(token))
+            return value;
+
+        value = value.TrimStart();
+        if (value.StartsWith(token, System.StringComparison.OrdinalIgnoreCase))
+            value = value.Substring(token.Length).TrimStart();
+
+        return value;
     }
 
     // Keep badge tidy; map special keys and clamp length.

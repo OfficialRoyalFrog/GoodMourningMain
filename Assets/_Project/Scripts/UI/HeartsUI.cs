@@ -43,6 +43,8 @@ public class HeartsUI : MonoBehaviour
         int max = Mathf.Max(1, playerHealth.Max);
         int cur = Mathf.Clamp(playerHealth.Current, 0, max);
 
+        int pulsingIndex = (cur > 0) ? Mathf.Min(cur, max) - 1 : -1;
+
         for (int i = 0; i < max; i++)
         {
             var go = Instantiate(heartTemplate.gameObject, heartTemplate.transform.parent);
@@ -60,6 +62,11 @@ public class HeartsUI : MonoBehaviour
             var rt = img.rectTransform;
             if (heartSize > 0)
                 rt.sizeDelta = new Vector2(heartSize, heartSize);
+
+            var pulse = go.GetComponent<HeartPulse>();
+            if (!pulse)
+                pulse = go.AddComponent<HeartPulse>();
+            pulse.SetPulsing(i == pulsingIndex);
         }
 
         var hlg = GetComponent<HorizontalLayoutGroup>();

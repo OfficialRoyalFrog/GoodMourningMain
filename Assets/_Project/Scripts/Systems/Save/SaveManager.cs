@@ -34,6 +34,10 @@ public sealed class SaveManager : MonoBehaviour
     {
         if (Instance && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+
+        // Ensure singleton survives scene loads by being a root object.
+        if (transform.parent != null)
+            transform.SetParent(null);
         DontDestroyOnLoad(gameObject);
         Debug.Log($"[SaveManager] Ready. Save path:\n{PathFull}");
     }

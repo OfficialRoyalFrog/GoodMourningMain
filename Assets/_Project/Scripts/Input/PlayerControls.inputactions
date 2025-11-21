@@ -16,7 +16,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Interect",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "43d3eaed-fb64-4250-901f-c470079be347",
                     "expectedControlType": "",
@@ -172,7 +172,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interect",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -183,7 +183,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interect",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

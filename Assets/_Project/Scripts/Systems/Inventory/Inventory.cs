@@ -20,6 +20,10 @@ public class Inventory : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+
+        // Ensure this singleton lives on a root object so DontDestroyOnLoad works.
+        if (transform.parent != null)
+            transform.SetParent(null);
         DontDestroyOnLoad(gameObject);
     }
 

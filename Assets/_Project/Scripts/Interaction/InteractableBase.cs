@@ -14,6 +14,9 @@ public class InteractableBase : MonoBehaviour, IInteractable
     [Tooltip("If true, the player must hold to interact (CotL-style).")]
     public bool requiresHold = true;
 
+    [Tooltip("Override to force instant/tap interaction even if requiresHold is true.")]
+    public bool forceInstant = false;
+
     [Tooltip("Override default hold duration for this object in seconds. Set to -1 to use the global default.")]
     public float holdSecondsOverride = -1f;
 
@@ -47,7 +50,35 @@ public class InteractableBase : MonoBehaviour, IInteractable
     bool _used;
     Collider _col;
 
-    void Awake() => _col = GetComponent<Collider>();
+    public bool RequiresHoldRuntime => requiresHold && !forceInstant;
+
+    void Awake()
+    {
+        _col = GetComponent<Collider>();
+        EnforceInstantIfNeeded();
+    }
+
+    void EnforceInstantIfNeeded()
+    {
+        if (actionBehaviours == null) return;
+        for (int i = 0; i < actionBehaviours.Length; i++)
+        {
+            var behaviour = actionBehaviours[i];
+            if (behaviour && behaviour is IInstantInteractAction)
+            {
+                requiresHold = false;
+                holdSecondsOverride = 0f;
+                break;
+            }
+        }
+    }
+
+#if UNITY_EDITOR
+    void OnValidate()
+    {
+        EnforceInstantIfNeeded();
+    }
+#endif
 
     public bool CanInteract(PlayerInteractor interactor)
     {

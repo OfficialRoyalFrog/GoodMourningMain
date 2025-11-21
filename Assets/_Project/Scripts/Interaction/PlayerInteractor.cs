@@ -26,14 +26,27 @@ public class PlayerInteractor : MonoBehaviour
     public IInteractable Current => _current;
 
     IInteractable _current;
+    float focusGraceTimer;
+    [SerializeField, Range(0f, 0.5f)] float focusGraceSeconds = 0.2f;
     [Header("Debug Runtime")]
     [SerializeField] private string currentDebug = "(none)";
-
     void Update()
     {
-        _current = FindBest();
-        var comp = _current as Component;
-        currentDebug = comp ? comp.name : "(none)";
+        var best = FindBest();
+        if (best != null)
+        {
+            _current = best;
+            focusGraceTimer = focusGraceSeconds;
+        }
+        else if (_current != null)
+        {
+            focusGraceTimer -= Time.deltaTime;
+            if (focusGraceTimer <= 0f || !_current.CanInteract(this))
+                _current = null;
+        }
+    
+        var debugComp = _current as Component;
+        currentDebug = debugComp ? debugComp.name : "(none)";
     }
 
     // Hook this to PlayerInput → Events → Player → Interact
@@ -52,7 +65,7 @@ public class PlayerInteractor : MonoBehaviour
         // If the target requires a HOLD interaction, InteractHoldController will handle it.
         var comp = target as Component;
         var baseComp = comp ? comp.GetComponentInParent<InteractableBase>() : null;
-        if (baseComp != null && baseComp.requiresHold)
+        if (baseComp != null && baseComp.RequiresHoldRuntime)
             return;
 
         // Non-hold (instant) interactions go through immediately.
